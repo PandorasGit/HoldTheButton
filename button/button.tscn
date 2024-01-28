@@ -1,7 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnwdter6f15fw"]
+[gd_scene load_steps=16 format=3 uid="uid://bnwdter6f15fw"]
 
 [ext_resource type="Script" path="res://button/button.gd" id="1_8jjov"]
 [ext_resource type="AudioStream" uid="uid://d3e4jx22y0qvq" path="res://button/671896__bertsz__heavy-prog-metal.mp3" id="2_mjgro"]
+[ext_resource type="Material" uid="uid://c545qtl53nnct" path="res://button/button.tres" id="3_d6gkv"]
+[ext_resource type="PackedScene" uid="uid://dljggt7b6gsvt" path="res://video.tscn" id="3_gklof"]
+[ext_resource type="FontFile" uid="uid://cwmg6fjgvx7s6" path="res://button/gunplay rg.otf" id="3_v53st"]
+[ext_resource type="AudioStream" uid="uid://b8fg7u2csw51d" path="res://button/cackle.wav" id="5_ekoit"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7p7l8"]
 albedo_color = Color(0, 0.552941, 0.741176, 1)
@@ -9,6 +13,11 @@ albedo_color = Color(0, 0.552941, 0.741176, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rh3fe"]
 albedo_color = Color(0.866667, 0, 0.145098, 1)
 emission_enabled = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_n7040"]
+dof_blur_far_enabled = true
+dof_blur_near_enabled = true
+dof_blur_amount = 0.0
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ctlni"]
 rayleigh_color = Color(0.360784, 0.403922, 0.396078, 1)
@@ -21,6 +30,153 @@ sky_material = SubResource("PhysicalSkyMaterial_ctlni")
 [sub_resource type="Environment" id="Environment_puyum"]
 background_mode = 2
 sky = SubResource("Sky_c3j21")
+
+[sub_resource type="Animation" id="Animation_dvxkj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGCylinder3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.0935031)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CSGCylinder3D:material")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("StandardMaterial3D_rh3fe")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CSGCylinder3D:material:emission_enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DirectionalLight3D:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.04]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SpotLight3D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.596516, -0.644217, 1.07327)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SpotLight3D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.295426, 0.417361, 0.128388)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SpotLight3D:spot_attenuation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SpotLight3D:light_color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("OmniLight3D:light_energy")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.422]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SpotLight3D:light_energy")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AudioStreamPlayer2:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Camera3D:attributes:dof_blur_amount")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_axlgo"]
 resource_name = "click_in"
@@ -145,128 +301,57 @@ tracks/9/keys = {
 "update": 0,
 "values": [1.0, 16.0]
 }
-
-[sub_resource type="Animation" id="Animation_dvxkj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CSGCylinder3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0.0935031)]
+"values": [{
+"args": [],
+"method": &"fire"
+}]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CSGCylinder3D:material")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AudioStreamPlayer2:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [SubResource("StandardMaterial3D_rh3fe")]
+"values": [false, true]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CSGCylinder3D:material:emission_enabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("DirectionalLight3D:light_energy")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Camera3D:attributes:dof_blur_amount")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 2, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [5.04]
+"values": [0.0, 0.0, 0.75]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("SpotLight3D:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
+tracks/13/type = "method"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath(".")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(5),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.596516, -0.644217, 1.07327)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("SpotLight3D:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.295426, 0.417361, 0.128388)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("SpotLight3D:spot_attenuation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("SpotLight3D:light_color")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("OmniLight3D:light_energy")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.422]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("SpotLight3D:light_energy")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
+"values": [{
+"args": [],
+"method": &"shake"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_14hkc"]
@@ -285,15 +370,18 @@ material = SubResource("StandardMaterial3D_7p7l8")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(0.702713, 0, 0, 0, -5.22143e-09, -0.702713, 0, 0.119452, -3.07166e-08, 0, 0, 0.0935031)
+sides = 64
 material = SubResource("StandardMaterial3D_rh3fe")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.35)
+attributes = SubResource("CameraAttributesPractical_n7040")
 fov = 53.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.963663, 0.267121, 0, -0.267121, -0.963663, 0, 0, 0)
 light_energy = 5.04
+light_cull_mask = 4294967293
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_puyum")
@@ -301,10 +389,12 @@ environment = SubResource("Environment_puyum")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0161495, 0, 0.96954)
 light_energy = 0.422
+light_cull_mask = 4294967293
 shadow_enabled = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(0.921748, 0, 0.387789, 0.122489, 0.948804, -0.291147, -0.367936, 0.315864, 0.874559, 0.596516, -0.644217, 1.07327)
+transform = Transform3D(0.921748, -1.3411e-07, 0.387789, 0.122489, 0.948804, -0.291147, -0.367936, 0.315864, 0.874559, 0.596516, -0.644217, 1.07327)
+light_cull_mask = 4294967293
 shadow_enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -323,5 +413,22 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_v53st")
+theme_override_font_sizes/font_size = 30
 text = "0:00"
 horizontal_alignment = 1
+
+[node name="video_background" type="CSGBox3D" parent="."]
+transform = Transform3D(3.975, 0, 0, 0, 1.915, 0, 0, 0, 3.49, 0, 0, -1.74406)
+layers = 2
+size = Vector3(1, 1, 0.687378)
+material = ExtResource("3_d6gkv")
+
+[node name="Video" parent="." instance=ExtResource("3_gklof")]
+offset_left = 1180.0
+offset_top = -669.0
+offset_right = 3868.0
+offset_bottom = 843.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ekoit")
