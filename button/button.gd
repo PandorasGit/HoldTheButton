@@ -22,7 +22,10 @@ func _physics_process(delta):
 		minutes = time_held / 60
 		seconds = fmod(time_held, 60)
 		millis = fmod(time_held, 1) * 100 
-		
+		if minutes >= 1:
+			$Label3D.text = "GRAHHHHHHHHHHHHHHHHHH"
+		if hours >= 1:
+			$Label2.text = "You have killed %0d people " % [time_held]
 		
 		$Label.text = "You have held it for %0d Days %0d Hours %0d Minutes %02d Seconds %02d Milliseconds" % [days, hours, minutes, seconds, millis]
 	else:
@@ -30,6 +33,8 @@ func _physics_process(delta):
 
 func _input(event):
 	if Input.is_action_just_released("everything"):
+		$Label3D.text = "ENTER"
+		$Label2.text = ""
 		range = Vector2.ZERO
 		fire_off()
 		is_held = false

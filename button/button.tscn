@@ -373,6 +373,10 @@ transform = Transform3D(0.702713, 0, 0, 0, -5.22143e-09, -0.702713, 0, 0.119452,
 sides = 64
 material = SubResource("StandardMaterial3D_rh3fe")
 
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.229732)
+text = "ENTER"
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.35)
 attributes = SubResource("CameraAttributesPractical_n7040")
@@ -415,7 +419,6 @@ offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_v53st")
 theme_override_font_sizes/font_size = 30
-text = "0:00"
 horizontal_alignment = 1
 
 [node name="video_background" type="CSGBox3D" parent="."]
@@ -432,3 +435,16 @@ offset_bottom = 843.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ekoit")
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_v53st")
